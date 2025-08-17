@@ -949,9 +949,9 @@ h6 {
 
 
 
-
-
 /* Scroll Sticky Section */
+/* 
+
 .scroll-sticky-section {
     height: 200vh;
     position: relative;
@@ -1025,13 +1025,291 @@ h6 {
 .spacer {
     height: 100vh;
 }
+ */
 
 
 
 
 
+/* Scroll Sticky Section */
+        .scroll-sticky-section {
+            height: 200vh;
+            position: relative;
+        }
 
+        .sticky-container {
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            overflow: hidden;
+        }
 
+        .sticky-image {
+            height: 100%;
+            background-image: url('https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 1rem;
+        }
+
+        .sticky-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, var(--deep-rose) 0%, var(--rose-gold) 100%);
+            opacity: 0.4;
+        }
+
+        .sticky-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+            padding: 0 1rem;
+        }
+
+        .content-left {
+            flex: 1;
+            color: white;
+        }
+
+        .main-title {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            line-height: 1.5;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            text-align: center;
+            min-width: 140px;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--deep-rose);
+        }
+
+        .btn-primary:hover {
+            background: #f8f8f8;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--deep-rose);
+        }
+
+        .xcontent-right {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .xoffers-box {
+            background: rgba(186, 85, 107, 0.9);
+            backdrop-filter: blur(10px);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            max-width: 500px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
+        }
+
+        .xoffers-box img {
+            width: 100%;
+            height: auto;
+            border-radius: var(--border-radius);
+        }
+
+        .spacer {
+            height: 100vh;
+            background: #f5f5f5;
+        }
+
+        /* Mobile Responsive Styles */
+        @media (max-width: 768px) {
+            .sticky-image {
+                background-attachment: scroll; /* Fix for mobile */
+                padding: 1rem 0.5rem;
+            }
+
+            .sticky-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 1.5rem;
+                padding: 0 0.5rem;
+            }
+
+            .content-left {
+                order: 1;
+            }
+
+            .xcontent-right {
+                order: 2;
+                width: 100%;
+            }
+
+            .main-title {
+                font-size: 2rem;
+                margin-bottom: 0.8rem;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .cta-buttons {
+                justify-content: center;
+                gap: 0.8rem;
+            }
+
+            .btn {
+                padding: 0.8rem 1.5rem;
+                font-size: 0.9rem;
+                min-width: 120px;
+            }
+
+            .xoffers-box {
+                padding: 1.5rem;
+                max-width: 100%;
+                margin: 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .sticky-content {
+                padding: 0 0.25rem;
+            }
+
+            .main-title {
+                font-size: 1.8rem;
+            }
+
+            .subtitle {
+                font-size: 0.9rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 200px;
+                padding: 0.8rem 1rem;
+            }
+
+            .xoffers-box {
+                padding: 1rem;
+            }
+        }
+
+        /* Tablet Styles */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .main-title {
+                font-size: 2.5rem;
+            }
+
+            .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .sticky-content {
+                gap: 1.5rem;
+            }
+
+            .xoffers-box {
+                padding: 1.8rem;
+            }
+        }
+
+        /* Large Desktop Styles */
+        @media (min-width: 1200px) {
+            .main-title {
+                font-size: 3.5rem;
+            }
+
+            .subtitle {
+                font-size: 1.3rem;
+            }
+
+            .xoffers-box {
+                padding: 3rem;
+            }
+        }
+
+        /* Touch-friendly improvements */
+        @media (hover: none) and (pointer: coarse) {
+            .btn {
+                padding: 1rem 2rem;
+                font-size: 1rem;
+            }
+        }
+
+        /* Landscape mobile orientation */
+        @media (max-width: 768px) and (orientation: landscape) {
+            .sticky-content {
+                flex-direction: row;
+                align-items: center;
+            }
+
+            .content-left {
+                text-align: left;
+            }
+
+            .main-title {
+                font-size: 1.8rem;
+            }
+
+            .subtitle {
+                font-size: 0.9rem;
+                margin-bottom: 1rem;
+            }
+
+            .cta-buttons {
+                justify-content: flex-start;
+            }
+        }
 
 
 
